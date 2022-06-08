@@ -11,6 +11,7 @@ description: https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-ex
 #### 예제목록
 
 * [Amazon S3 buckets](amazon-s3.md)
+* [파일 업로드](uploading-files.md)
 
 {% hint style="success" %}
 © Copyright 2021, Amazon Web Services, Inc.
