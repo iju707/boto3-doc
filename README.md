@@ -1,5 +1,5 @@
 ---
-description: https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.htmld
+description: https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html
 ---
 
 # 빠르게 해보기
@@ -138,7 +138,7 @@ data = open('test.jpg', 'rb')
 s3.Bucket('my-bucket').put_object(Key='test.jpg', Body=data)
 ```
 
-[자원](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/resources.html#guide-resources)과 [컬렉션](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/collections.html#guide-collections)은 이어제는 절에서 더 자세히 다루겠습니다.
+[자원](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/resources.html#guide-resources)과 [컬렉션](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/collections.html#guide-collections)은 다 절에서 더 자세히 다루겠습니다.
 
 {% hint style="success" %}
 © Copyright 2021, Amazon Web Services, Inc.
