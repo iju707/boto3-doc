@@ -9,3 +9,5 @@
   * [Amazon S3 버킷](sample/s3/amazon-s3.md)
   * [파일 업로드](sample/s3/uploading-files.md)
   * [파일 다운로드](sample/s3/download-file.md)
+  * [파일 전송 구성](sample/s3/file-transfer.md)
+  * [사전인증 URL](sample/s3/presigned-urls.md)
