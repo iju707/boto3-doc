@@ -14,6 +14,7 @@ description: https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-ex
 * [파일 업로드](uploading-files.md)
 * [파일 다운로드](download-file.md)
 * [파일 전송 구성](file-transfer.md)
+* [사전인증 URL](presigned-urls.md)
 
 {% hint style="success" %}
 © Copyright 2021, Amazon Web Services, Inc.
