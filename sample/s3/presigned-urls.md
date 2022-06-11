@@ -113,6 +113,66 @@ def create_presigned_post(bucket_name, object_name,
         url: POST 요청 URL
         fields: POST와 함께 제출될 양식 항목과 값의 딕셔너리
     :return : 오류시 None
+    """
+    
+    # 사전인증 S3 POST URL 생성하기
+    s3_client = boto3.client('s3')
+    try:
+        response = s3_client.generate_presigned_post(bucket_name,
+                                                     object_name,
+                                                     Fields=fields,
+                                                     Conditions=conditions,
+                                                     ExpiresIn=expiration)
+    except ClientError as e:
+        logging.error(e)
+        return None
+        
+    # 사전인증 URL과 요구되는 항목을 포함한 응답
+    return response
+```
+
+생성된 사전인증 URL은 후속으로 진행할 HTTP POST 요청에 전달될 URL과 추가적인 항목을 포함하고 있습니다.
+
+아래 코드는 파일을 S3에 업로드하기위해 requests 패키지를 사용하여 사전인증 POST URL로  POST 요청을 수행하는 것을 보여줍니다.
+
+```python
+import requests # 설치필요시 : pip install requests
+
+# 사전인증 URL 생성하기
+object_name = 'OBJECT_NAME'
+response = create_presigned_post('BUCKET_NAME', object_name)
+if response is None:
+    exit(1)
+    
+# 다른 파이썬 프로그램에서 파일을 업로드하기 위해 사전인증 URL을 어떻게 사용하는지 보여줍니다.
+with open(object_name, 'rb') as f:
+    files = {'file': (object_name, f)}
+    http_response = requests.post(response['url'], data=response['fields'], files=files)
+# 성공하면 HTTP 상태코드 204가 반환됩니다.
+logging.info(f'파일 업로드 HTTP 상태코드: {http_response.status_code}')
+```
+
+사전인증 URL과 항목은 HTML 페이지에서도 사용될 수 있습니다.
+
+```html
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+  <body>
+    <!-- S3Client.generate_presigned_post() 에서 반환된 'url' 값 복사-->
+    <form action="URL_VALUE" method="post" enctype="multipart/form-data">
+      <!-- S3Client.generate_presigned_post() 에서 반환된 키/값형식의 'fields' 복-->
+      <input type="hidden" name="key" value="VALUE" />
+      <input type="hidden" name="AWSAccessKeyId" value="VALUE" />
+      <input type="hidden" name="policy" value="VALUE" />
+      <input type="hidden" name="signature" value="VALUE" />
+    File:
+      <input type="file"   name="file" /> <br />
+      <input type="submit" name="submit" value="Upload to Amazon S3" />
+    </form>
+  </body>
+</html>
 ```
 
 {% hint style="success" %}
