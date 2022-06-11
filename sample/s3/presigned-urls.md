@@ -64,7 +64,7 @@ import boto3
 from botocore.exceptions import ClientError
 
 def create_presigned_url_expanded(client_method_name, method_parameters=None,
-                                expiration=3600, http_method=None):
+                                  expiration=3600, http_method=None):
     """ S3.Client 함수를 실행하기 위한 사전인증 URL 생성하기
     
     AWS 파이썬 SDK에서 제공하는 모든 클라이언트 함수가 지원되지는 않습니다.
@@ -79,10 +79,41 @@ def create_presigned_url_expanded(client_method_name, method_parameters=None,
     # S3 클라이언트 함수를 위한 사전인증 URL 생성하기
     s3_client = boto3.client('s3')
     try:
+        response = s3_client.generate_presigned_url(ClientMethod=client_method_name,
+                                                    Params=method_parameters,
+                                                    ExpiresIn=expiration,
+                                                    HttpMethod=http_method)
+    except ClientError as e:
+        logging.error(e)
+        return None
     
+    # 사전인증 URL을 포함한 응답
+    return response
 ```
 
 ## 파일업로드를 위한 사전인증 URL 생성하기
+
+파일을 업로드하기위한 AWS 인증정보를 가지고 있지 않은 사용자도 사전인증 URL을 통해 업로드를 수행할 수 있습니다. 업로드 동작은 HTTP POST 요청을 만들고 요청의 일부분으로 전송될 추가적인 인자를 필요로 합니다.
+
+```python
+import logging
+import boto3
+from botocore.exceptions import ClientError
+
+def create_presigned_post(bucket_name, object_name,
+                          fields=None, conditions=None, expiration=3600):
+    """ 파일을 업로드하기 위한 사전인증 URL S3 POST 요청 생성하기
+    
+    :param bucket_name: 문자열
+    :param object_name: 문자열
+    :param fields: 미리채워진 양식필드 딕셔너리
+    :param conditions: 정책에 포함할 조건 목록
+    :param expiration: 사전인증 URL이 유효한 시간(초)
+    :return: 아래의 키를 가진 딕셔너리
+        url: POST 요청 URL
+        fields: POST와 함께 제출될 양식 항목과 값의 딕셔너리
+    :return : 오류시 None
+```
 
 {% hint style="success" %}
 ©Copyright 2021, Amazon Web Services, Inc.
