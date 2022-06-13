@@ -15,6 +15,11 @@ description: https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-ex
 * [파일 다운로드](download-file.md)
 * [파일 전송 구성](file-transfer.md)
 * [사전인증 URL](presigned-urls.md)
+* [버킷 정책](bucket-policies.md)
+* 접근 권한
+* 아마존 S3 버킷을 정적웹호스트로 사용하기
+* 버킷 CORS 구성
+* 아마존 S3의 AWS PrivateLink
 
 {% hint style="success" %}
 © Copyright 2021, Amazon Web Services, Inc.

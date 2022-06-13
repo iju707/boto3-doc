@@ -11,3 +11,4 @@
   * [파일 다운로드](sample/s3/download-file.md)
   * [파일 전송 구성](sample/s3/file-transfer.md)
   * [사전인증 URL](sample/s3/presigned-urls.md)
+  * [버킷 정책](sample/s3/bucket-policies.md)
