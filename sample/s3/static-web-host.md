@@ -45,3 +45,9 @@ delete\_bucket\_website 함수 호출해서 버킷의 웹사이트 구성을 삭
 s3 = boto3.client('s3')
 s3.delete_bucket_website(Bucket='BUCKET_NAME')
 ```
+
+{% hint style="success" %}
+©Copyright 2021, Amazon Web Services, Inc.
+
+Contact for this documents : iju707@gmail.com
+{% endhint %}
