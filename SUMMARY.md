@@ -13,3 +13,4 @@
   * [사전인증 URL](sample/s3/presigned-urls.md)
   * [버킷 정책](sample/s3/bucket-policies.md)
   * [접근 권한](sample/s3/access-permissions.md)
+  * [아마존 S3 버킷을 정적웹호스트로 사용하기](sample/s3/static-web-host.md)
