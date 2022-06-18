@@ -14,9 +14,9 @@ description: https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3.ht
 
 ## 분할전송
 
-분할전송은 파일크기가 multipart\_threshold 속성의 값을 초과했을때 동작합니다.
+분할전송은 파일크기가 `multipart_threshold` 속성의 값을 초과했을때 동작합니다.
 
-아래 예제에서 TransferConfig 객체에 정의된 한계값보다 파일의 크기가 클경우 분할로 전송되도록 upload\_file을 구성하였습니다.
+아래 예제에서 `TransferConfig` 객체에 정의된 한계값보다 파일의 크기가 클경우 분할로 전송되도록 `upload_file`을 구성하였습니다.
 
 ```python
 import boto3
@@ -33,7 +33,7 @@ s3.upload_file('FILE_NAME', 'BUCKET_NAME', 'OBJECT_NAME', Config=config)
 
 ## 병렬전송 동작
 
-병렬 S3 API 전송 동작의 최대 숫자는 접속 속도에 맞게 조정될 수 있습니다. 대역폭 사용량을 가감하기 위해 max\_concurrency 속성으로 설정할 수 있습니다.
+병렬 S3 API 전송 동작의 최대 숫자는 접속 속도에 맞게 조정될 수 있습니다. 대역폭 사용량을 가감하기 위해 `max_concurrency` 속성으로 설정할 수 있습니다.
 
 기본 설정값은 10 입니다. 대역폭 사용량을 줄이려면 값을 줄이고 높이려면 값을 높이면 됩니다.
 
@@ -48,9 +48,9 @@ s3.download_file('BUCKET_NAME', 'OBJECT_NAME', 'FILE_NAME', Config=config)
 
 ## 쓰레드
 
-전송동작은 병렬을 구현하기 위해 쓰레드를 사용합니다. use\_threads 속성을 False로 설정하여 쓰레드사용을 비활성화 할 수 있습니다.
+전송동작은 병렬을 구현하기 위해 쓰레드를 사용합니다. `use_threads` 속성을 `False`로 설정하여 쓰레드사용을 비활성화 할 수 있습니다.
 
-쓰레드사용이 비활성화되면, 병렬 전송은 발생되지 않습니다. 따라서, max\_concurrency 속성의 값이 무시됩니다.
+쓰레드사용이 비활성화되면, 병렬 전송은 발생되지 않습니다. 따라서, `max_concurrency` 속성의 값이 무시됩니다.
 
 ```python
 # 쓰레드 사용/병렬 전송 비활성화
@@ -61,7 +61,7 @@ s3.download_file('BUCKET_NAME', 'OBJECT_NAME', 'FILE_NAME', Config=config)
 ```
 
 {% hint style="success" %}
-©Copyright 2021, Amazon Web Services, Inc.
+© Copyright 2021, Amazon Web Services, Inc.
 
-Contact for this documents : iju707@gmail.com
+Contact for this documents : [iju707@gmail.com](mailto:iju707@gmail.com)
 {% endhint %}

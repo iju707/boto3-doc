@@ -19,10 +19,10 @@ description: https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-ex
 * [접근 권한](access-permissions.md)
 * [아마존 S3 버킷을 정적웹호스트로 사용하기](static-web-host.md)
 * [버킷 CORS 구성](configuring-buckets.html.md)
-* 아마존 S3의 AWS PrivateLink
+* [아마존 S3의 AWS PrivateLink](privatelink.md)
 
 {% hint style="success" %}
 © Copyright 2021, Amazon Web Services, Inc.
 
-Contact for this documents : iju707@gmail.com
+Contact for this documents : [iju707@gmail.com](mailto:iju707@gmail.com)
 {% endhint %}

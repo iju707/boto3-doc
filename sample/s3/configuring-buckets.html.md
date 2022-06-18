@@ -9,7 +9,7 @@ description: >-
 
 ## 버킷 CORS 구성 검색하기
 
-파이썬용 AWS SDK의 get\_bucket\_cors 함수를 호출하여 버킷의 CORS 구성을 검색할 수 있습니다.
+파이썬용 AWS SDK의 `get_bucket_cors` 함수를 호출하여 버킷의 CORS 구성을 검색할 수 있습니다.
 
 ```python
 import logging
@@ -41,7 +41,7 @@ def get_bucket_cors(bucket_name):
 
 ## 버킷 CORS 구성 설정하기
 
-put\_bucket\_cors 함수를 호출하여 버킷의 CORS 구성을 설정할 수 있다.
+`put_bucket_cors` 함수를 호출하여 버킷의 CORS 구성을 설정할 수 있다.
 
 ```python
 # 구성 규칙 정의하기
@@ -59,3 +59,9 @@ cors_configuration = {
 s3 = boto3.client('s3')
 s3.put_bucket_cors(Bucket='BUCKET_NAME', CORSConfiguration=cors_configuration)
 ```
+
+{% hint style="success" %}
+© Copyright 2021, Amazon Web Services, Inc.
+
+Contact for this documents : [iju707@gmail.com](mailto:iju707@gmail.com)
+{% endhint %}

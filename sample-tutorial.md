@@ -159,5 +159,5 @@ Hello, boto3! (Daniel)
 {% hint style="success" %}
 © Copyright 2021, Amazon Web Services, Inc.
 
-Contact for this documents : iju707@gmail.com
+Contact for this documents : [iju707@gmail.com](mailto:iju707@gmail.com)
 {% endhint %}
