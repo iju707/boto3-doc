@@ -16,3 +16,7 @@
   * [아마존 S3 버킷을 정적웹호스트로 사용하기](sample/s3/static-web-host.md)
   * [버킷 CORS 구성](sample/s3/configuring-buckets.html.md)
   * [아마존 S3의 AWS PrivateLink](sample/s3/privatelink.md)
+
+## 개발자가이드 <a href="#guide" id="guide"></a>
+
+* [구성](guide/configuration.md)
